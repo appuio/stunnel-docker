@@ -6,6 +6,8 @@ services:
     image: appuio/stunnel:latest
     environment:
       CONNECT: ${CONNECT:-stunnel.tld:16379}
+      #CONNECT_PORT: "16379"
+      #CONNECT_HOST: "stunnel.tld"
       ACCEPT: ${ACCEPT:-0.0.0.0:6379}
       LOG_LEVEL: 7
 

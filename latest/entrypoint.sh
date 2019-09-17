@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [ -z ${CONNECT} ]; then
+    export CONNECT=${CONNECT_HOST}:${CONNECT_PORT}
+fi
+if [ -z ${ACCEPT} ]; then
+    export ACCEPT=${ACCEPT_HOST}:${ACCEPT_PORT}
+fi
+
 config=/etc/stunnel/stunnel.conf
 
 # poor-mans templating engine to replace with ENV vars:
@@ -8,5 +15,9 @@ eval "cat <<EOF
 $(<$config)
 EOF
 " > ${config}
+
+if [[ ${LOG_LEVEL} == "7" ]]; then
+    cat ${config}
+fi
 
 exec stunnel
