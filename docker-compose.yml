@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  stunnel:
+    build:
+      context: ./latest/
+    image: appuio/stunnel:latest
+    environment:
+      CONNECT: ${CONNECT:-stunnel.tld:16379}
+      ACCEPT: ${ACCEPT:-0.0.0.0:6379}
+      LOG_LEVEL: 7
+
+    ports:
+      - "6379:6379"
