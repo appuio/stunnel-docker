@@ -8,4 +8,4 @@ Docker image running stunnel.
 
 ## Pipeline
 
-Builds are enabled with Docker Hub AutoBuilds, rebuilt every time the base image changes.
+Our current Docker Hub builds are broken as of September 2019
