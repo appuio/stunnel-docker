@@ -22,4 +22,6 @@ if [[ ${LOG_LEVEL} == "7" ]]; then
     cat ${config}
 fi
 
+echo "Starting stunnel with LOG_LEVEL = '${LOG_LEVEL}'. A level <= 4 means pretty much no logs except errors."
+
 exec stunnel
