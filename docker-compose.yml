@@ -10,6 +10,7 @@ services:
       #CONNECT_HOST: "stunnel.tld"
       ACCEPT: ${ACCEPT:-0.0.0.0:6379}
       LOG_LEVEL: 7
+      CLIENT: "yes"
 
     ports:
       - "6379:6379"

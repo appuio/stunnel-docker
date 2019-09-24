@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e -o pipefail
+
 if [ -z ${CONNECT} ]; then
     export CONNECT=${CONNECT_HOST}:${CONNECT_PORT}
 fi
