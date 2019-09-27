@@ -10,15 +10,19 @@ if [ -z ${ACCEPT} ]; then
 fi
 
 config=/etc/stunnel/stunnel.conf
+template=/etc/stunnel/stunnel.conf.template
 
+if [[ -f ${template} ]]; then
 # poor-mans templating engine to replace with ENV vars:
 # https://stackoverflow.com/questions/2914220/bash-templating-how-to-build-configuration-files-from-templates-with-bash
 eval "cat <<EOF
-$(<$config)
+$(<$template)
 EOF
 " > ${config}
+fi
 
 if [[ ${LOG_LEVEL} == "7" ]]; then
+    ls -lah /etc/stunnel
     cat ${config}
 fi
 
