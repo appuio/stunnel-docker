@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM docker.io/library/alpine:3.15
 
 CMD /entrypoint.sh
 
