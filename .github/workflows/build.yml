@@ -19,7 +19,7 @@ jobs:
           images: ghcr.io/${{ github.repository }}
 
       - name: Build
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v5
         with:
           context: latest
           tags: ${{ steps.meta.outputs.tags }}
