@@ -1,4 +1,4 @@
-FROM docker.io/library/alpine:3.16
+FROM docker.io/library/alpine:3.19
 
 CMD /entrypoint.sh
 
